@@ -51,7 +51,7 @@
         <url-pattern>/*</url-pattern>
     </servlet-mapping>-->
 
-    <!--获取Servlet的初始化参数-->
+    <!--获取Servlet的初始化参数 ServletConfig-->
     <servlet>
         <servlet-name>ServletConfigTest</servlet-name>
         <servlet-class>com.daysun.javaweb.servlet.ServletConfigTest</servlet-class>
@@ -73,7 +73,7 @@
 
 
     <!--
-    获取WEB应用的初始化参数
+    获取WEB应用的初始化参数 ServletContext
     http://localhost:8080/servlet/ServletContext
     输出：jdbc:mysql://localhost:3306/test
     -->
