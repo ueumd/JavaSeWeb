@@ -1,0 +1,96 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+
+
+    <!--
+        <servlet></servlet>注册servlet名称和servlet的完整类名
+
+        <servlet-mapping></servlet-mapping> 映射已注册的Servle的一个对外访问路径 它包含有两个子元素：
+        <servlet-name>用于指定Servlet的注册名称
+        <url-pattern>Servlet的对外访问路径  /servlet/ServletFirstDemo
+
+
+          同一个同一个Servlet可以被映射到多个URL上
+          即多个<servlet-mapping>元素的<servlet-name>子元素的设置值可以是同一个Servlet的注册名。
+
+          如：http://localhost:8080/servlet/ServletFirstDemo?name=hello&pass=123456&color=blue,red,yellow
+              http://localhost:8080/servlet/2.html?name=hello&pass=123456&color=blue,red,green
+
+          如果是注解方式@WebServlet("/ServletFirst")
+          如：http://localhost:8080/ServletFirst?name=hello&pass=123456&color=blue,red,yellow
+    -->
+
+    <servlet>
+        <servlet-name>ServletFirst</servlet-name>
+        <servlet-class>com.daysun.javaweb.servlet.ServletFirst</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletFirst</servlet-name>
+        <url-pattern>/servlet/ServletFirstDemo</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ServletFirst</servlet-name>
+        <url-pattern>/servlet/2.html</url-pattern>
+    </servlet-mapping>
+
+
+    <!--
+        *通配符URL，但是只能有两种固定的格式：
+        1:*.扩展名
+        2:以正斜杠（/）开头并以"/*"结尾。例如/action/*
+        http://localhost:8080/action/hellol?name=hello&pass=123456&color=blue,red,green,yellow
+    -->
+    <!--<servlet-mapping>
+        <servlet-name>ServletFirst</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>-->
+
+    <!--获取Servlet的初始化参数-->
+    <servlet>
+        <servlet-name>ServletConfigTest</servlet-name>
+        <servlet-class>com.daysun.javaweb.servlet.ServletConfigTest</servlet-class>
+        <!--配置ServletConfigDemo1的初始化参数 -->
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>hello</param-value>
+        </init-param>
+        <init-param>
+            <param-name>age</param-name>
+            <param-value>20</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletConfigTest</servlet-name>
+        <url-pattern>/servlet/ServletInit</url-pattern>
+    </servlet-mapping>
+
+
+    <!--
+    获取WEB应用的初始化参数
+    http://localhost:8080/servlet/ServletContext
+    输出：jdbc:mysql://localhost:3306/test
+    -->
+    <servlet>
+        <servlet-name>ServletContextTest</servlet-name>
+        <servlet-class>com.daysun.javaweb.servlet.ServletContextTest</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletContextTest</servlet-name>
+        <url-pattern>/servlet/ServletContext</url-pattern>
+    </servlet-mapping>
+
+    <!-- 配置WEB应用的初始化参数 -->
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://localhost:3306/test</param-value>
+    </context-param>
+
+</web-app>
