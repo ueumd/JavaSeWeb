@@ -93,4 +93,34 @@
         <param-value>jdbc:mysql://localhost:3306/test</param-value>
     </context-param>
 
+    <!--过滤器-->
+    <filter>
+        <filter-name>FilterOne</filter-name>
+        <filter-class>com.daysun.javaweb.filter.FilterOne</filter-class>
+        <init-param>
+            <param-name>param</param-name>
+            <param-value>jikexueyuan</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>FilterOne</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
+        <filter-name>FilterTwo</filter-name>
+        <filter-class>com.daysun.javaweb.filter.FilterTwo</filter-class>
+        <init-param>
+            <param-name>param</param-name>
+            <param-value>jikexueyuan</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>FilterTwo</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>
