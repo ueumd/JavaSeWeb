@@ -46,6 +46,8 @@ public class ServletFirst extends HttpServlet {
         System.out.println(pass);
         System.out.println("----------------------------------");
 
+        request.setAttribute("test","setAttribute");
+
         //获取所有提交的数据
         Enumeration<String> enums = request.getParameterNames();
         while (enums.hasMoreElements()) {
