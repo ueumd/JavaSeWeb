@@ -19,17 +19,17 @@ public enum  Coin {
 
 
     //上面定义的传给下面,需要什么参数，构造方法接收什么参数
-    private String value;
-    public String getValue(){
-        return  value;
+    private String value22;
+    public String getValue22(){
+        return  value22;
     }
 
     Coin(String value){ // penny("hello"),
-        this.value=value;
+        this.value22=value;
     }
 
     public static void main(String[] args) {
-        Coin coin=Coin.quarter;
-        System.out.println(coin.getValue());
+        Coin coin=Coin.penny;
+        System.out.println(coin.getValue22());
     }
 }
