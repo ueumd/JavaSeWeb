@@ -7,9 +7,9 @@ import java.util.Properties;
 
 public class TestMySql {
 						//协议：数据库子协议：主机：端口：数据库
-	private String url="jdbc:mysql://localhost:3306/myjava";
+	private String url="jdbc:mysql://localhost:3306/test";
 	private String user="root";
-	private String password="51134642";
+	private String password="123456";
 	
 	@Test
 	public void test1() throws Exception{

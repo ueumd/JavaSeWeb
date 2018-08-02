@@ -17,7 +17,9 @@ public class JsonTest {
     private static void JSONObjectSimple() {
         JSONObject zs = new JSONObject();
         Object nullObj = null;
-
+           /*
+           * key:value
+           * */
         zs.put("name", "张三");
         zs.put("age", 20);
         zs.put("birthdy", "1900-01-01");
