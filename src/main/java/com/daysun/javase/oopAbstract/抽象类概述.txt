@@ -1,0 +1,44 @@
+﻿请认真看如下代码：
+	class A {
+		public void show() {
+			System.out.println("英雄联盟");
+		}
+	}
+
+	class B {
+		public void show() {
+			System.out.println("热血江湖");
+		}
+	}
+我们发现，现在的代码，方法声明相同，方法体不同。
+所以，我们今天的抽取，只抽取方法声明，不抽取方法体。
+那么，抽取出的类就是如下形式：
+	abstract class Demo {
+		public abstract void show();
+	}	
+		
+	一个方法如果只有方法声明，没有方法体，那么说明这个方法不是具体的，而是抽象的。
+	这个时候，java就提供了一个抽象关键字来体现这种方法：abstract。
+	在一个类中，抽象的方法是没有意义的，将来如果有一个类继承这个类，是要必须重写该方法的。
+	如果在一个类中，有抽象方法，该类必须被定义为抽象类。
+
+	按照这种关系，我们把改进后的代码写一下。
+
+	abstract class Demo {
+		public abstract void show();
+	}
+
+	class A extends Demo {
+		public void show() {
+			System.out.println("英雄联盟");
+		}
+	}
+
+	class B extends Demo {
+		public void show() {
+			System.out.println("热血江湖");
+		}
+	}
+	
+	问题：这样的写法，反而比上面麻烦，为什么还会有这种写法?
+		强制要求子类必须完成某些功能。
