@@ -1,0 +1,33 @@
+1:Scanner的概述(理解)
+	(1)Scanner是JDK5以后出现的方便我们从键盘接受数据的类。
+	(2)Scanner的构造格式：
+		Scanner sc = new Scanner(System.in);
+
+		System.in 是System类下面有一个静态的成员变量in。它的类型是InputStream。
+			  代表的是标准键盘输入流。也就是键盘录入数据。
+		Scanner是对其进行了封装，提供了各种转换功能。方便我们获取到想要的数据类型的数据。
+	(3)要掌握的两个功能：
+		A:返回int类型
+			public int nextInt()
+		B:返回String类型
+			public String nextLine()
+
+		注意事项：
+			先int,在String会有问题。
+			解决方案：
+				重新建立Scanner对象。
+				把所有的数据都看成是String类型，将来转换为int类型。
+	import java.util.Scanner;
+	class Test {
+			public static void main(String[] args) {
+			Scanner sc = new Scanner(System.in);
+			String a = sc.next();
+			int c = sc.nextInt();
+			String b = sc.nextLine();
+
+			System.out.println("a="+a+"b="+b+"c="+c);
+
+			System.out.println("iiiiiiiiiiiiii");
+			String d = sc.nextLine();
+		}
+	}

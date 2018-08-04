@@ -1,0 +1,88 @@
+2:String类的概述和使用(掌握)
+	(1)由多个字符组成的一串数据。
+	(2)构造方法：
+		A:String s = new String();
+		B:String s = new String(byte[] bys);
+		C:String s = new String(byte[] bys,int startIndex,int count);
+		D:String s = new String(char[] chs);
+		E:String s = new String(char[] chs,int startIndex,int count);
+		F:String s = new String(String s2);
+		G:String s = "hello";
+
+		长使用：
+			BCDEG
+	(3)面试题：
+		A:字符串一旦被赋值就不能被改动。
+			注意：这里的改动指的是字符串的内容，而不是字符串对象的引用。
+		B:String s = new String("hello");和String s = "hello";有区别吗?是什么呢?
+			有。
+			前者创建了两个对象。
+			后者创建了一个对象。
+		C:看程序，写结果
+			String s1 = new String("hello");
+			String s2 = new String("hello");
+			System.out.println(s1==s2);
+			System.out.println(s1.equals(s2));
+
+			String s3 = new String("hello");
+			String s4 = "hello";
+			System.out.println(s3==s4);
+			System.out.println(s3.equals(s4));
+
+			String s5 = "hello";
+			String s6 = "hello";
+			System.out.println(s5==s6);
+			System.out.println(s5.equals(s6));
+		D:看程序，写结果(将水缸中的水倒入水杯中的原理，这样讲会跟清晰)
+			String s7 = "hello";
+			String s8 = "world";
+			String s9 = "helloworld";
+			System.out.println(s9==s7+s8);
+			System.out.println(s9=="hello"+"world");
+
+			变量就直接造，常量先找，如果有就使用，否则就造。
+	(4)字符串的常见功能：(补齐中文)
+		A:判断功能
+			boolean equals(Object obj)
+			boolean equalsIgnoreCase(String str)
+			boolean contains(String str)
+			boolean startsWith(String str)
+			boolean endsWith(String str)
+			boolean isEmpty()
+
+		B:获取功能
+			int length()
+			char charAt(int index)
+			int indexOf(int ch) 
+			int indexOf(String str);
+			int indexOf(int ch,int fromIndex)
+			int indexOf(String str,int fromIndex)
+			String substring(int start)
+			String substring(int start,int end)
+
+		C:转换功能
+			byte[] getBytes()
+			char[] toCharArray()
+			static String copyValueOf(char[] chs)
+			static String valueOf(char[] chs)
+			static String valueOf(int i)
+			String toLowerCase()
+			String toUpperCase()
+			String concat(String str)
+
+		D:其他功能
+			String replace(char old,char new)
+			String replace(String old,String new)
+
+			String[] split(String regex)
+
+			String trim()
+			
+			int compareTo(String str)
+			int compareToIgnoreCase(String str) 
+	(5)案例：(理解)
+		A:模拟用户登录
+		B:遍历字符串
+		C:统计字符串中大写字母，小写字母以及数字字符出现的次数
+		D:把一个字符串的首字母变成大写，其他的全部小写
+		E:统计大串中小串出现的次数

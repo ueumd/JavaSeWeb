@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 
-import myjava.jdbc.eg.JdbcUtil;
+import com.daysun.javase.jdbc.eg.JdbcUtil;
 
 import org.junit.Test;
 

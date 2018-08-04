@@ -27,7 +27,7 @@ public class RequestDemo01 extends HttpServlet {
         String queryString = request.getQueryString();//得到请求的URL地址中附带的参数
         String remoteAddr = request.getRemoteAddr();//得到来访者的IP地址
         String remoteHost = request.getRemoteHost();
-        int remotePort = request.getRemotePort()
+        int remotePort = request.getRemotePort();
         String remoteUser = request.getRemoteUser();
         String method = request.getMethod();//得到请求URL地址时使用的方法
         String pathInfo = request.getPathInfo();

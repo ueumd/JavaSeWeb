@@ -1,0 +1,58 @@
+String类有一个equals()方法，它的功能是判断两个字符串的内容是否相同。
+	如果我不带你们看源码,请说出你们自己的思路：
+		把字符串变成字符数组，然后依次比较每一个数组元素。如果都相同，返回true，否则，返回false。
+		
+如何查看JDK提供的类的源码呢?
+	A:找到JDk的安装目录的src文件。然后自己找。这样稍嫌麻烦。
+	B:通过Eclipse这样的工具可以直接关联查看。
+		a:左手Ctrl+右手鼠标移动到要查看的类上点击即可。
+		b:把光标定为到要查看的类上，然后按下F3即可。
+	
+看源码：
+
+	String s1 = "hello";
+	String s2 = "hello";
+	System.out.println(s1.equals(s2)); //true
+	
+	String s3 = new String("hello");
+	String s4 = new String("hello");
+	System.out.println(s3.equals(s4)); //true
+
+	public boolean equals(Object anObject) {
+		//this -- s1	-- s3
+		//anObject -- s2	--	s4
+		
+		//判断地址是否相同，如果是，就直接返回。
+        if (this == anObject) {
+            return true;
+        }
+        
+        //判断传递过来的参数是否是字符串类型的。如果是字符串类型，才能继续。
+        if (anObject instanceof String) {
+            String anotherString = (String) anObject; //anotherString = s4;
+            
+            //value 是在这里定义的 private final char value[];代表一个常量字符数组。其实就是本身字符串的表示。
+            //这里其实隐含了一个把字符串转换成字符数组的功能。
+            
+            int n = value.length; //value.length == this.value.length == s3.length()
+            
+            if (n == anotherString.value.length) {  //后面是s4的长度
+            
+            	//是字符串类型，并且长度相同。
+ 
+                char v1[] = value; //把s3转换为了一个字符数组v1.
+                char v2[] = anotherString.value; //把s4转换为了一个字符数组v2.
+                int i = 0;
+                while (n-- != 0) {  //n=5,4
+                	//n=4,3
+                	//i=0,1
+                    if (v1[i] != v2[i]) //对应的字符如果不等，就false。
+                            return false;
+                    i++; //i=1;
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+		

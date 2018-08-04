@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import myjava.jdbc.eg.JdbcUtil;
+import com.daysun.javase.jdbc.eg.JdbcUtil;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;

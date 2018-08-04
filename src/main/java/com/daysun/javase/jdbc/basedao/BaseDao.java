@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.apache.commons.beanutils.BeanUtils;
 
-import myjava.jdbc.eg.JdbcUtil;
+import com.daysun.javase.jdbc.eg.JdbcUtil;
 
 public class BaseDao {
 

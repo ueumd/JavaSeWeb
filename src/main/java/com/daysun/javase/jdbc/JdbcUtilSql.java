@@ -1,3 +1,4 @@
+/*
 package com.daysun.javase.jdbc;
 
 import org.junit.Test;
@@ -6,7 +7,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import myjava.jdbc.JdbcUtil;
+import com.daysun.javase.jdbc.eg.JdbcUtil;
 
 public class JdbcUtilSql {
 	@Test
@@ -62,3 +63,4 @@ public class JdbcUtilSql {
 		}
 	}
 }
+*/

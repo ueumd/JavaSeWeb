@@ -1,3 +1,4 @@
+/*
 package com.daysun.javase.jdbc.beanuitls;
 
 import org.apache.commons.beanutils.BeanUtils;
@@ -9,7 +10,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.Converter;
 import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
@@ -22,8 +22,10 @@ public class App {
 		String birth = "2016-7-5";
 		
 		Admin admin =new Admin();
-		/*admin.setUserName("beanutils");
-		admin.setPwd("addd");*/
+		*/
+/*admin.setUserName("beanutils");
+		admin.setPwd("addd");*//*
+
 		
 		// 注册日期类型转换器：2， 使用组件提供的转换器工具类
 		ConvertUtils.register(new DateLocaleConverter(), Date.class);
@@ -85,3 +87,4 @@ public class App {
 		},Date.class);
 	}
 }
+*/

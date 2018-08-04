@@ -1,0 +1,24 @@
+3:StringBuffer类(掌握)
+	(1)StringBuffer:是字符串缓冲区类，长度可以改变。
+	(2)面试题：
+		String和StringBuffer的区别?
+			String的长度固定。
+			StringBuffer的长度可变。
+		StringBuffer和StringBuilder的区别?
+			StringBuffer的线程安全,效率低。
+			StringBuilder的线程不安去,效率高。
+	(3)StringBuffer的构造方法
+		A:StringBuffer sb = new StringBuffer();
+		B:StringBuffer sb = new StringBuffer(int capacity);
+		C:StringBuffer sb = new StringBuffer(String s);
+
+		注意：StringBuilder的功能和StringBuffer一模一样。前者是JDK5以后出现的。
+	(4)要掌握的功能：(请自己把对应的方法写出来)
+		A:添加功能 public StringBuilder append(String str)
+		B:删除功能 public StringBuilder delete(int start,int end)
+		C:其他功能
+			替换功能	  public StringBuilder replace(int start,int end,String str)
+			截取功能  public String substring(int start)    或public String substring(int start,int end)
+			反转功能  public StringBuffer reverse();
+	(5)案例：
+		把一个字符串反转。
