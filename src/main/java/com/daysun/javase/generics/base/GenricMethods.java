@@ -79,9 +79,8 @@ public class GenricMethods {
         String value=autoCover(name);
 
         System.out.println(value);
-
         int i=20;
-        System.out.println(autoCover(i));
+      //  System.out.println(autoCover(i));
 
         String[] array={"A","B","C"};
         fillArray(array,name);

@@ -1,4 +1,4 @@
-package com.daysun.javase.adv.reflection;
+package com.daysun.javase.adv.reflection.demo2;
 
 import javax.swing.*;
 import java.lang.reflect.Field;

@@ -1,0 +1,19 @@
+public abstract class Fu {
+	public Fu(){}
+	
+	public static Fu getFu() {
+		Fu fu = new Zi();
+		return fu;
+	}
+	
+	public abstracr void show();
+	public void eat(){}
+}
+
+public class Zi extends Fu {
+	public Zi(){}
+	
+	public void show(){
+		System.out.println("show");
+	}
+}

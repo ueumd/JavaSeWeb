@@ -2,6 +2,7 @@ package com.daysun.javase.api.string.que;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class QueDemo {
@@ -153,4 +154,54 @@ public class QueDemo {
         System.out.println("小写字母："+smallCount+"个");
         System.out.println("数字字符："+numberCount+"个");
     }
+
+    /**
+     *
+     * 对字符串中字符进行自然顺序排序
+     * "basckd" -- "abcdks"
+     *
+     * 思路：
+     * 		A:定义一个字符串。
+     * 		B:把字符串转换成字符数组。
+     * 		C:对字符数组进行排序
+     * 		D:把字符数组转换成字符串。
+     * 		E:输出转换后的字符串。
+     */
+    @Test
+    public void que4(){
+        // 定义一个字符串。
+        String s = "basckd";
+
+        // 把字符串转换成字符数组。
+        char[] chs = s.toCharArray();
+
+        // 对字符数组进行排序
+        // bubbleSort(chs); //面试用
+
+
+        Arrays.sort(chs); // 开发用
+
+        // 把字符数组转换成字符串。
+        /*
+         * 1:构造方法 2:copyValueOf 3:valueOf
+         */
+        String result = String.valueOf(chs);
+
+        // 输出转换后的字符串。
+        System.out.println(result);
+    }
+
+    // 面试用
+    public static void bubbleSort(char[] arr) {
+        for (int x = 0; x < arr.length - 1; x++) {
+            for (int y = 0; y < arr.length - 1 - x; y++) {
+                if (arr[y] > arr[y + 1]) {
+                    char temp = arr[y];
+                    arr[y] = arr[y + 1];
+                    arr[y + 1] = temp;
+                }
+            }
+        }
+    }
+
 }

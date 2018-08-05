@@ -15,7 +15,7 @@ package com.daysun.javase.api.stringBuffer;
  * 
  * StringBuffer和StringBuilder的区别?
  * 后者更高效。
- * 
+ * StringBuilder推荐在单线程中使用
  * 线程：线程安全问题。
  * 		安全了，效率就低了。
  * 		效率高了，可能就不安全了。

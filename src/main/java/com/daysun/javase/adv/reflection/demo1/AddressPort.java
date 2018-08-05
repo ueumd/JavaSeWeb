@@ -1,8 +1,5 @@
-package com.daysun.javase.adv.reflection;
+package com.daysun.javase.adv.reflection.demo1;
 
-/**
- * Created by Administrator on 2016/9/27.
- */
 public class AddressPort {
     @BindAddress("http://www.hfjy.com")
     private String address;
@@ -36,15 +33,15 @@ public class AddressPort {
         this.number = number;
     }
 
-    public void info(){
-        System.out.println("info is "+address+":"+port);
+    public void info() {
+        System.out.println("info is " + address + ":" + port);
     }
 
 
     @BindGet("hello")
-    public void getHttp(String param){
-        String url="http://www.luqu.la/?username="+param;
-        System.out.println("get--------> "+url);
+    public void getHttp(String param) {
+        String url = "http://www.luqu.la/?username=" + param;
+        System.out.println("get--------> " + url);
     }
 
 }

@@ -1,0 +1,111 @@
+集合(掌握)
+	(1)集合的由来
+		我们需要对多个对象进行存储和获取。可以使用对象数组。
+		但是，如果对象的个数是变化的，对象数据就解决不了了。
+		怎么办呢?java就提供了集合类解决。
+
+	(2)集合和数组的区别?
+		A:长度问题
+			数组长度固定
+			集合长度可变
+		B:存储元素类型1
+			数组只能存储同一种类型
+			集合可以存储不同类型的对象
+		C:存储元素类型2
+			数组可以存储基本类型，也可以存储引用类型。
+			集合只能存储引用类型。
+
+	(3)集合体系的由来：
+		多种集合的数据结构不同，但是，它们有共性的功能。
+		通过不断的向上抽取，最终形成了集合的体系结构。
+
+		Collection
+			|--List
+				|--ArrayList
+				|--Vector
+				|--LinkedList
+			|--Set
+				|--HashSet
+				|--TreeSet
+
+	(4)Collection接口的功能：
+		A:添加功能
+			add(Object obj)
+		B:删除功能
+			remove(Object obj)
+		C:判断功能
+			contains(Object obj)
+		D:获取功能
+			Iterator iterator()
+		E:长度功能
+			size()
+
+	(5)迭代器
+		A:迭代器其实就是遍历集合的一种方式。
+		B:迭代器的使用：
+			迭代器不能单独使用，它依赖于集合而存在。
+		C:使用步骤
+			a:通过集合对象调用iterator()方法得到迭代器对象。
+			b:通过迭代器对象的hasNext()方法判断是否有元素。
+			c:通过迭代器对象的next()获取元素。
+		D:原理：
+			是以内部类形式存在的。
+
+	(6)案例：(掌握)
+		集合的使用步骤：
+			A:创建集合对象
+			B:创建元素对象
+			C:把元素添加到集合中
+			D:遍历集合
+				a:通过集合对象调用iterator()方法得到迭代器对象。
+				b:通过迭代器对象的hasNext()方法判断是否有元素。
+				c:通过迭代器对象的next()获取元素。
+
+		存储字符串并遍历：
+			
+			Collection c = new ArrayList();
+
+			String s1 = "hello";
+			String s2 = "world";
+			String s3 = "java";
+
+			c.add(s1);
+			c.add(s2);
+			c.add(s3);
+
+			Iterator it = c.iterator();
+			while(it.hasNext()) {
+				String s = (String) it.next();
+				System.out.println(s);
+			}
+
+		存储自定义对象并遍历：自己补齐。
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+
+public class CollectionDemo3 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Collection c=new ArrayList();
+		
+		c.add(new Student("zhangdan",23));
+		c.add(new Student("lisi",43));
+		c.add(new Student("wangwu",27));
+		c.add(new Student("hongqi",83));
+		
+		Iterator it=c.iterator();
+		while(it.hasNext())
+		{
+			Student s=(Student)it.next();
+			System.out.println(s.getName()+"------"+s.getAge());
+		}
+		
+		System.out.println("-------------");
+		for(Iterator iter=c.iterator();iter.hasNext();)
+		{
+			Student s=(Student)iter.next();
+			System.out.println(s.getName()+"******"+s.getAge());
+		}
+	}
