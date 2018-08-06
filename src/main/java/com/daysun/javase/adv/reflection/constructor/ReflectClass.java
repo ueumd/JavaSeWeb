@@ -1,4 +1,4 @@
-package com.daysun.javase.adv.reflection.zjm;
+package com.daysun.javase.adv.reflection.constructor;
 /*
  * 反射：通过class文件，去使用构造方法，成员变量，成员方法。
  *
@@ -6,9 +6,9 @@ package com.daysun.javase.adv.reflection.zjm;
  * 既然是一个对象，那么，该对象应该有对应的类。是谁呢? Class类。
  *
  * 如何获取字节码文件对象?
- * A:根据Object类的getClass()方法。
- * B:数据类型的静态class属性。
- * C:通过Class类的静态方法forName()
+     * A:根据Object类的getClass()方法。
+     * B:数据类型的静态class属性。
+     * C:通过Class类的静态方法forName()
  *
  * 自己写程序玩，这三种可以任选其一。
  * 但是，开发中，用的是第三种。
@@ -17,7 +17,7 @@ package com.daysun.javase.adv.reflection.zjm;
 
 import com.daysun.javase.adv.reflection.Person;
 
-public class ReflectDemo {
+public class ReflectClass {
     public static void main(String[] args) {
        try{
            // 方式1

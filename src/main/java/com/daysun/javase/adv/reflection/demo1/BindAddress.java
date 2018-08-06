@@ -5,8 +5,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Retention(RetentionPolicy.RUNTIME)
+
 @Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME) //反射读取注解时 一定是RUNTIME
 
 public @interface BindAddress {
     String value() default "127.0.0.1";

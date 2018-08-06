@@ -17,3 +17,6 @@
 
  getSuperclass()：获取某类的父类
  getInterfaces()：获取某类实现的接口
+
+
+ setAccessible 禁止安全检查，可以提高反射的运行速度
