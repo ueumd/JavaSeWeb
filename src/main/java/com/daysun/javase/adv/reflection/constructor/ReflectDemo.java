@@ -211,15 +211,6 @@ public class ReflectDemo {
     }
 
     /**
-     * 获取注解
-     */
-    @Test
-    public void anno(){
-
-    }
-
-
-    /**
      * 通过反射获取构造方法并使用。
      * <p>
      * 作业：我要你使用带两个参数的构造，并给name赋值为"林青霞",age赋值为"27"
