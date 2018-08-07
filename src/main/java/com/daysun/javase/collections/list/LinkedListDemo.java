@@ -3,11 +3,21 @@ package com.daysun.javase.collections.list;
 import java.util.LinkedList;
 
 /**
- * Created by Administrator on 2016/9/25.
- *
  * 查询慢 增册快
+ * LinkedList的特有功能：
+ * 		A:添加功能
+ * 			void addFirst(Object e)
+ *			void addLast(Object e)
+ * 		B:删除功能
+ * 			Object removeFirst()
+ * 			Object removeLast()
+ * 		C:获取功能
+ * 			Object getFirst()
+ * 			Object getLast()
+ *
+ *
  */
-public class CollectionListLinkedList {
+public class LinkedListDemo {
     public static void main(String[] args) {
         LinkedList<String> list=new LinkedList<String>();
         list.add("A");

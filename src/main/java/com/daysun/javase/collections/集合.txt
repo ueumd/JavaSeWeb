@@ -20,11 +20,19 @@
 		通过不断的向上抽取，最终形成了集合的体系结构。
 
 		Collection
-			|--List
-				|--ArrayList
-				|--Vector
-				|--LinkedList
-			|--Set
+			|--List 元素有序（存入顺序和取出顺序一致），可重复
+				|--ArrayList  底层数据是数组，查询快，增删慢；线程不安全，效率高
+				|--Vector     底层数据是数组，查询快，增删慢；线程安全，效率低（一般不用）
+				|--LinkedList 底层数据是链表，查询慢，增删快；线程不安全，效率高
+
+				一般使用谁呢：
+				    是否需要线程安全：
+				        是： Vector
+				        否：ArrayList 或 LinkedList
+				            增删多：LinkedList
+				            查询多：ArrayList
+
+			|--Set 元素无序，唯一
 				|--HashSet
 				|--TreeSet
 
