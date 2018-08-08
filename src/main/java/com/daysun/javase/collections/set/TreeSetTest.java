@@ -33,25 +33,25 @@ import java.util.TreeSet;
  *
  */
 public class TreeSetTest {
-    public static void main(String[] args) {
-        TreeSet<String > ts=new TreeSet<String>();
-        ts.add("z");
-        ts.add("x");
-        ts.add("a");
-        ts.add("c");
-
-        System.out.println(ts);//[a, c, x, z]
-
-        TreeSet tree = new TreeSet();
-
-     /*   tree.add(new Emp(110, "老陆", 100));
-        tree.add(new Emp(113, "老钟", 200));
-        tree.add(new Emp(220, "老汤", 300));
-        tree.add(new Emp(120, "老蔡", 500));*/
-
-        tree.add(new Person(100,"AAAa"));
-        tree.add(new Person(130,"bbb"));
-        tree.add(new Person(120,"cccc"));
-        System.out.println("集合的元素："+tree);
-    }
+//    public static void main(String[] args) {
+//        TreeSet<String > ts=new TreeSet<String>();
+//        ts.add("z");
+//        ts.add("x");
+//        ts.add("a");
+//        ts.add("c");
+//
+//        System.out.println(ts);//[a, c, x, z]
+//
+//        TreeSet tree = new TreeSet();
+//
+//     /*   tree.add(new Emp(110, "老陆", 100));
+//        tree.add(new Emp(113, "老钟", 200));
+//        tree.add(new Emp(220, "老汤", 300));
+//        tree.add(new Emp(120, "老蔡", 500));*/
+//
+//        tree.add(new Person(100,"AAAa"));
+//        tree.add(new Person(130,"bbb"));
+//        tree.add(new Person(120,"cccc"));
+//        System.out.println("集合的元素："+tree);
+//    }
 }
