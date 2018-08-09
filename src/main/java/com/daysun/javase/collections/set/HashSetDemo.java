@@ -57,7 +57,7 @@ import java.util.Set;
  * B:重写equals()是为了比较成员的内容。
  * 如果你真不知道这两个方法该怎么重写：请自动生成即可。
  */
-public class HashSetTest {
+public class HashSetDemo {
     public static void main(String[] args) {
         // 创建集合对象
         HashSet<Student> hs = new HashSet<Student>();

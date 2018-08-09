@@ -3,9 +3,6 @@ package com.daysun.javase.collections.set;
 import java.util.Comparator;
 import java.util.TreeSet;
 
-/**
- * Created by Administrator on 2016/9/25.
- */
 public class TreeSetTest2 {
     public static void main(String[] args) {
         //创建一个比较器对象
@@ -21,6 +18,7 @@ public class TreeSetTest2 {
 
     }
 }
+
 class  Emp implements Comparable<Emp>{
 
     int id;

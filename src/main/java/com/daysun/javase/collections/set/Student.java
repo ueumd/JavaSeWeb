@@ -1,6 +1,6 @@
 package com.daysun.javase.collections.set;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private String name;
     private int age;
 
@@ -73,4 +73,24 @@ public class Student {
         return "Student [name=" + name + ", age=" + age + "]";
     }
 
+    /**
+     * 按学生年龄排序
+     * @param o
+     * @return
+     */
+    public int compareTo(Student o) {
+
+        //		// 按照年龄比较(主要条件)
+//		// this -- 谁调用代表谁
+//		// s -- 被比较的
+//		int num = this.age - s.age;
+//
+//		// 但是，它没有考虑到年龄相同的情况下，姓名可能不同。
+//		// 所以，这个代码的难点在于自己要分析出次要条件
+//		int num2 = num == 0 ? this.name.compareTo(s.name) : num;
+//		return num2;
+//        return 0;
+
+        return this.age-o.age;
+    }
 }
