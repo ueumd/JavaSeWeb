@@ -117,3 +117,4 @@ public class CollectionDemo3 {
 			System.out.println(s.getName()+"******"+s.getAge());
 		}
 	}
+

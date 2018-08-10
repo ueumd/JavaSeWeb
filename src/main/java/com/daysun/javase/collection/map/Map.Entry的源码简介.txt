@@ -1,0 +1,27 @@
+interface Map<K,V> {
+	interface Entry<K,V> {
+		K getKey();
+		V getValue();
+		...
+	}
+}
+
+class HashMap<K,V> implements Map<K,V> {
+	static class Entry<K,V> implements Map.Entry<K,V> {
+		final K key;
+        V value;
+        
+        Entry(K k, V v) {
+            value = v;
+            key = k;
+        }
+        
+        public final K getKey() {
+            return key;
+        }
+
+        public final V getValue() {
+            return value;
+        }
+	}
+}

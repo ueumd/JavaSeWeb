@@ -1,4 +1,4 @@
-package com.daysun.javase.collections.set;
+package com.daysun.javase.collection.set;
 
 import java.util.Comparator;
 import java.util.TreeSet;

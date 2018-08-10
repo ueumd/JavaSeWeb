@@ -1,4 +1,4 @@
-package com.daysun.javase.collections;
+package com.daysun.javase.collection;
 
 /**
  * Created by Administrator on 2016/9/25.

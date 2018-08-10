@@ -1,4 +1,4 @@
-package com.daysun.javase.collections.list;
+package com.daysun.javase.collection.list;
 
 import java.util.Enumeration;
 import java.util.Vector;

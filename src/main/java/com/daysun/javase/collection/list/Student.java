@@ -1,4 +1,4 @@
-package com.daysun.javase.collections.list;
+package com.daysun.javase.collection.list;
 
 public class Student {
 	private String name;

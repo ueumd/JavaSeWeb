@@ -1,17 +1,19 @@
-package com.daysun.javase.collections.set;
+package com.daysun.javase.collection.map;
 
-public class Student implements Comparable<Student> {
+public class Student {
     private String name;
     private int age;
+    private String address;
 
     public Student() {
         super();
     }
 
-    public Student(String name, int age) {
+    public Student(String name, int age, String address) {
         super();
         this.name = name;
         this.age = age;
+        this.address = address;
     }
 
     public String getName() {
@@ -30,19 +32,19 @@ public class Student implements Comparable<Student> {
         this.age = age;
     }
 
-    // @Override
-    // public int hashCode() {
-    // // return 0;
-    // A:zhangsan,20 = 50 + 20*11
-    // B:lisi,50 = 20 + 50*11
-    // return name.hashCode() + age;
-    // }
+    public String getAddress() {
+        return address;
+    }
 
-    // 提高效率
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
+        result = prime * result + ((address == null) ? 0 : address.hashCode());
         result = prime * result + age;
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         return result;
@@ -50,7 +52,6 @@ public class Student implements Comparable<Student> {
 
     @Override
     public boolean equals(Object obj) {
-         System.out.println(this+"---"+obj);
         if (this == obj)
             return true;
         if (obj == null)
@@ -58,6 +59,11 @@ public class Student implements Comparable<Student> {
         if (getClass() != obj.getClass())
             return false;
         Student other = (Student) obj;
+        if (address == null) {
+            if (other.address != null)
+                return false;
+        } else if (!address.equals(other.address))
+            return false;
         if (age != other.age)
             return false;
         if (name == null) {
@@ -68,29 +74,4 @@ public class Student implements Comparable<Student> {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Student [name=" + name + ", age=" + age + "]";
-    }
-
-    /**
-     * 按学生年龄排序
-     * @param o
-     * @return
-     */
-    public int compareTo(Student o) {
-
-        //		// 按照年龄比较(主要条件)
-//		// this -- 谁调用代表谁
-//		// s -- 被比较的
-//		int num = this.age - s.age;
-//
-//		// 但是，它没有考虑到年龄相同的情况下，姓名可能不同。
-//		// 所以，这个代码的难点在于自己要分析出次要条件
-//		int num2 = num == 0 ? this.name.compareTo(s.name) : num;
-//		return num2;
-//        return 0;
-
-        return this.age-o.age;
-    }
 }

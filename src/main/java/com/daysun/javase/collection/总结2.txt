@@ -1,0 +1,150 @@
+1:Map集合(掌握)
+	(1)Map集合存储的是键值对元素。键是唯一的,值可以重复。
+	(2)Map和Collection的区别?
+		A:Map是双列集合，存储的元素键值对，键唯一，值可以重复。
+		B:Collection是单列集合，存储的元素是单一的，List集合可以重复，Set集合元素唯一。
+	(3)Map集合的功能
+		A:添加功能
+			V put(K key,V value)
+		B:删除功能	
+			remove(K key)
+		C:判断功能
+			containsKey(K key)
+			containsValue(V value)
+		D:获取功能
+			V get(K key)
+			Set<K> keySet()
+			Collection<V> values()
+			Set<Map.Entry<K,V>> entrySet()
+		E:长度功能
+			int size()
+	(4)Map集合的数据结构问题：
+		Map集合的数据结构对键有效，跟值无关。
+
+		它的底层数据结构和Set中讲解的一致。
+			如果是哈希表结构，就需要重写hashCode()和equals()。
+			如果是二叉树结构，就有两种方式：Comparable,Comparator
+	(5)Map的遍历方式
+		假设有一个HashMap集合，存储的键和值都是String类型。名称叫hm。
+
+		A:根据键找值(掌握)
+			a:获取所有键的集合
+			b:遍历键的集合，获取到每一个键
+			c:根据键找值
+
+			代码体现：
+			
+			Set<String> set = hm.keySet();
+			for(String key : set) {
+				String value = hm.get(key);
+				System.out.println(key+"---"+value);
+			}
+
+		B:根据键值对对象找键和值(理解)
+			a:获取所有键值对对象的集合
+			b:遍历键值对对象的集合，获取到每一个键值对对象
+			c:根据键值对对象获取键和值
+
+			代码体现：
+
+			Set<Map.Entry<String,String>> set = hm.entrySet();
+			for(Map.Entry<String,String> me : set) {
+				String key  = me.getKey();
+				String vlaue = me.getValue();
+				System.out.println(key+"---"+value);
+			}
+	(6)案例：
+		A:统计一个字符串中每个字符出现的次数
+		B:Map集合的嵌套存储和遍历
+	(7)Map集合的体系
+		Map
+			|--HashMap
+				|--LinkedHashMap
+			|--Hashtable
+			|--TreeMap
+
+		A:HashMap和Hashtable的区别?
+		B:LinkedHashMap的键的特点?
+
+2:Collections工具类(理解)
+	(1)Collections是针对集合操作的工具类。
+	(2)面试题：
+		Collection和Collections的区别?
+			Collection是单列集合的顶层接口。
+			Collections是操作集合的工具类。
+	(3)常见功能：
+		A:排序
+			sort()
+		B:二分查找
+			binarySearch()
+		C:最大值
+			max()
+		D:反转
+			reverse()
+		E:随机置换
+			shuffle()
+	(4)如何造一个线程安全的集合：
+		//如果是造了一个线程安全的ArrayList集合。其他的方式类似，查看API即可
+		List<String> list = synchronizedList(new ArrayList<String>());
+
+3:集合总结(什么时候使用谁?)
+	是否键值对：
+		是：Map
+			是否排序：
+				是：TreeMap
+				否：HashMap
+			不知道，HashMap
+		否：Collection
+			是否唯一：
+				是：Set
+					是否排序：
+						是：TreeSet
+						否：HashSet
+					不知道，HashSet
+				否：List
+					增删多：LinkedList
+					查询多：ArrayList
+
+					不知道，ArrayList
+		不知道，用ArrayList
+
+4:集合体系总结
+	集合：
+		|--Collection
+			|--List
+				|--ArrayList
+					底层数据结构是数组，查询快，增删慢。
+					线程不安全，效率高。
+				|--Vector
+					底层数据结构是数组，查询快，增删慢。
+					线程安全，效率低。
+				|--LinkedList
+					底层数据结构是链表，查询慢，增删快。
+					线程不安全，效率高。
+			|--Set
+				|--HashSet
+					底层数据结构是哈希表。
+					如何保证唯一性?
+						依赖hashCode()和equals()
+					顺序：
+						先判断hashCode()值是否相同：
+							是：继续走equals()，看返回值
+								true:元素重复。不添加
+								false:元素不重复。添加
+							否：直接添加
+					|--LinkedHashSet
+						底层数据结构是链表和哈希表。
+							由链表保证有序(存储和取出一致)。
+							由哈希表保证元素唯一。
+				|--TreeSet
+					底层数据结构是二叉树。
+					如果保证唯一性?
+						根据返回值是否是0。
+					如何排序：
+						自然排序：Comparable
+						比较器排序：Comparator
+		|--Map
+			|--HashMap
+				|--LinkedHashMap
+			|--Hashtable
+			|--TreeMap

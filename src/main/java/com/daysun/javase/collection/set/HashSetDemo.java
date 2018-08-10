@@ -1,8 +1,6 @@
-package com.daysun.javase.collections.set;
+package com.daysun.javase.collection.set;
 
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
 
 /**
  * 集合 的体系：
