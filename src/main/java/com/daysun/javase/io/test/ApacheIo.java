@@ -1,4 +1,4 @@
-package com.daysun.javase.io;
+package com.daysun.javase.ioandfile.test;
 
 import org.apache.commons.io.FileUtils;
 

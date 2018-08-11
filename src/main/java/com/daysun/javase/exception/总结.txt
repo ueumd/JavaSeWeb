@@ -1,0 +1,88 @@
+1:异常(理解)
+	(1)就是程序的非正常情况。
+	(2)异常的继承体系结构：
+		Throwable:
+			|--Error 严重的问题,不需要处理的。
+			|--Exception 非RuntimeException必须进行处理。两种方案，点击鼠标即可。
+				|--RuntimeException 运行时期异常,需要修正代码。
+	(3)jvm的默认处理方式：
+		默认情况下，jvm会采用默认处理方案：
+			把异常的全路径名称，原因，及位置等信息显示出来。
+		注意：
+			如果是jvm的默认处理方式，那么，它会在出问题的地方结束。
+	(4)我们自己的处理方案：
+		A:try...catch...finally
+			基本格式：
+				try {
+					可能有问题的代码;
+				}catch(异常对象) {
+					对问题的处理;
+				}finally {
+					释放资源;
+				}
+
+			变形格式：
+				try...catch
+				try...catch...catch
+				try...catch...catch...finally
+				try...finally
+
+			注意：
+				如果多个异常，有子父关系，父异常一定要放在最后。
+				如果多个异常，是平级关系，它们存在的位置没有顺序关系。
+
+				执行顺序：
+					在try里面的代码会按照从上往下执行，一旦发生问题，
+					就会产生一个异常对象，去和catch里面进行匹配。
+					有对应的匹配，就走对应的处理方案。
+					没有，就找父匹配，有就走对应的处理方案。
+					如果找不到，那么就由jvm采用默认处理方案。
+
+			JDK7的新特性：在处理多个平级的异常的时候
+				catch(ExceptionA | ExceptionB | ExceptionC ... e) {
+				
+				}
+
+		B:throws throw
+	(5)面试题：
+		A:Exception和RuntimeException的区别?
+			Exception:分为编译期异常和运行期异常。编译期异常是必须处理的。否则，代码不能编译通过。
+			RuntimeException:运行期异常,不需要编写异常处理代码,但是可能需要修正程序参数或者逻辑代码。
+		B:throws和throw的区别?
+			throws:在方法声明上,后面跟的是异常类名。
+			       throws声明后面如果是一个运行时期异常，调用者不需要处理。这种方式没有意义。
+			       throws声明后面跟的是一个编译期异常，调用者是必须处理的。
+			throw:在方法体中,后面跟的是异常对象名。
+			       throw后面如果抛出的是运行时期异常对象，那么方法上是不需要进行声明的。
+			       throw后面如果抛出的是编译时期异常对象，那么，一般在方法声明上都是要用throws声明该方法有异常。
+		C:finally的面试题
+			a:final,finally,finalize的特点及区别?
+			b:如果catch里面有return，请问finally里面的代码还执行吗?
+			  如果执行，是在return前，还是后呢?
+			c:写一个程序，测试finally里面的操作对结果没有影响。
+				finally一般只用于释放资源。
+		D:jvm的默认处理方式?
+	(6)怎么选择呢?
+		A:能够自己处理的时候，尽量自己处理。
+		B:在main方法里面尽量不要抛。
+		C:将来在实际开发中，我们会把不同的异常给出不同的界面进行显示给用户。
+	(7)子父关系中的异常处理?
+		class Fu {
+			public void show()  throws Exception  {
+			
+			}
+		}
+
+		class Zi extends Fu {
+			public void show() throws RuntimeException {
+			
+			}
+		}
+
+		class Demo {
+			public static void main(String[] args) {
+				
+			}
+		}
+
+		子的重写方法中不能抛出比父更大的异常。
