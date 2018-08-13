@@ -1,0 +1,43 @@
+Java中的多线程你只要看这一篇就够了
+https://www.cnblogs.com/wxd0108/p/5479442.html
+
+Java多线程学习（总结很详细！！！）
+https://www.cnblogs.com/yjd_hycf_space/p/7526608.html
+
+
+
+Java多线程学习（吐血超详细总结）
+https://blog.csdn.net/evankaka/article/details/44153709
+
+1:线程(理解)
+	(1)死锁
+		同步中，多个线程使用多把锁之间存在等待的现象。
+	(2)JDK5的新特性：Lock锁
+		它把什么时候获取锁，什么时候释放锁的时间给明确了。
+	(3)线程间的通信
+		不同种类的线程针对同一个资源的操作。
+	(4)几个方法
+		优先级
+		暂停
+		加入
+		守护线程
+	(5)最简单的线程程序代码：
+		new Thread() {
+			public void run() {
+				for(int x=0; x<100; x++) {
+					System.out.println(x);
+				}
+			}
+		}.start();
+
+		new Thread(new Runnable(){
+			public void run() {
+				for(int x=0; x<100; x++) {
+					System.out.println(x);
+				}
+			}
+		}).start();
+
+2:模版设计模式。
+	有一个抽象类，这个类中有一个非抽象方法，定义了一个模版。
+	它把抽象的内容给抽取出来，定义抽象方法，将来供具体类去实现。

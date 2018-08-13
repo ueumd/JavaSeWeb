@@ -1,0 +1,12 @@
+package com.daysun.javase.thread.yxj;
+
+public class JoinDemo implements Runnable {
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 100; i++) {
+            System.out.println(Thread.currentThread().getName() + "---" + i);
+        }
+    }
+
+}
