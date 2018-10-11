@@ -36,6 +36,8 @@ public class StaticCat {
         mimi.info();
         pipi.info();
 
+        System.out.println(sid);
+
     }
 
 }
